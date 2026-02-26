@@ -1,6 +1,199 @@
 <!DOCTYPE html>
+
 <html lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- ... (truncated for brevity in my thought, I'll use full content in tool call) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Calendario</h1>
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+</button>
+</header>
+<!-- Calendar Section -->
+<main class="flex-1 overflow-y-auto pb-24">
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-6">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h2 class="text-xl font-bold">Octubre 2023</h2>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Lun</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Mar</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Mié</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Jue</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Vie</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Sáb</div>
+<div class="text-xs font-bold text-slate-400 uppercase py-2">Dom</div>
+</div>
+<div class="grid grid-cols-7 gap-y-2">
+<!-- Previous month padding -->
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">25</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">26</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">27</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">28</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">29</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700 text-sm">30</div>
+<!-- Current month -->
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    1
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">2</button>
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    3
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">4</button>
+<button class="aspect-square flex items-center justify-center rounded-full bg-primary text-white text-sm font-bold">5</button>
+<button class="aspect-square flex items-center justify-center text-sm">6</button>
+<button class="aspect-square flex items-center justify-center text-sm">7</button>
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    8
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">9</button>
+<button class="aspect-square flex items-center justify-center text-sm">10</button>
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    11
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">12</button>
+<button class="aspect-square flex items-center justify-center text-sm">13</button>
+<button class="aspect-square flex items-center justify-center text-sm">14</button>
+<button class="aspect-square flex items-center justify-center text-sm">15</button>
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    16
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">17</button>
+<button class="aspect-square flex items-center justify-center text-sm">18</button>
+<button class="aspect-square flex items-center justify-center text-sm">19</button>
+<button class="aspect-square flex flex-col items-center justify-center text-sm relative">
+                    20
+                    <span class="absolute bottom-2 w-1 h-1 bg-primary rounded-full"></span>
+</button>
+<button class="aspect-square flex items-center justify-center text-sm">21</button>
+<button class="aspect-square flex items-center justify-center text-sm">22</button>
+<button class="aspect-square flex items-center justify-center text-sm">23</button>
+<button class="aspect-square flex items-center justify-center text-sm">24</button>
+<button class="aspect-square flex items-center justify-center text-sm">25</button>
+<button class="aspect-square flex items-center justify-center text-sm">26</button>
+<button class="aspect-square flex items-center justify-center text-sm">27</button>
+<button class="aspect-square flex items-center justify-center text-sm">28</button>
+<button class="aspect-square flex items-center justify-center text-sm">29</button>
+<button class="aspect-square flex items-center justify-center text-sm">30</button>
+<button class="aspect-square flex items-center justify-center text-sm">31</button>
+</div>
+</div>
+<!-- Selected Day Tasks -->
+<div class="px-6 pt-4">
+<h3 class="text-base font-bold mb-4 flex items-center gap-2">Tareas para hoy, 5 de Octubre <span class="text-xs font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">3 tareas</span></h3>
+<div class="space-y-3">
+<!-- Task Card -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-1.5 h-10 bg-primary rounded-full shrink-0"></div>
+<div class="flex-1">
+<p class="font-semibold text-sm">Reunión de equipo</p>
+<p class="text-xs text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                            10:00 AM - 11:30 AM
+                        </p>
+</div>
+<div class="shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</div>
+</div>
+<!-- Task Card -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-1.5 h-10 bg-amber-400 rounded-full shrink-0"></div>
+<div class="flex-1">
+<p class="font-semibold text-sm">Revisión de diseño UI</p>
+<p class="text-xs text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                            02:00 PM - 03:00 PM
+                        </p>
+</div>
+<div class="shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</div>
+</div>
+<!-- Task Card -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-1.5 h-10 bg-emerald-400 rounded-full shrink-0"></div>
+<div class="flex-1">
+<p class="font-semibold text-sm line-through text-slate-400">Gimnasio</p>
+<p class="text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                            06:00 PM - 07:30 PM
+                        </p>
+</div>
+<div class="shrink-0">
+<input checked="" class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex items-center justify-between z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<span class="text-[10px] font-medium">Tareas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-icon">calendar_today</span>
+<span class="text-[10px] font-medium">Calendario</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium">Estadísticas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+</nav>
+</body></html>
